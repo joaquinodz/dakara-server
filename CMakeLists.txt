@@ -67,8 +67,10 @@ else()
   set(DAKARA_SOCKETS "")
 endif()
 
-file(GLOB_RECURSE DAKARA_SOURCES "src/*.cpp")
-file(GLOB_RECURSE DAKARA_HEADERS "src/*.h")
+# Using CONFIGURE_DEPENDS, whenever the glob's value changes, 
+# CMake will re-run and update the build with the new/removed files.
+file(GLOB_RECURSE DAKARA_SOURCES CONFIGURE_DEPENDS "src/*.cpp")
+file(GLOB_RECURSE DAKARA_HEADERS CONFIGURE_DEPENDS "src/*.h")
 
 add_executable(${PROJECT_NAME} ${DAKARA_SOURCES})
 
