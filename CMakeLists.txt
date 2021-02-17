@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.4)
+cmake_minimum_required (VERSION 3.12)
 
 # Use Microsoft's package manager (vcpkg) if the `VCPKG_ROOT` environment variable is set
 # VERY useful for Windows developers
